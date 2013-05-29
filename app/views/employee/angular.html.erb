@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="myApp">
+<header><div class="panel"><h3>Angularjs Demo</h3></div></header>
+  <head>
+
+
+  </head>
+  <body>
+    <div id="content">
+ <fieldset>
+    <legend>Search Employee</legend>
+
+    Search<input ng-model="search.$"/>
+    Search by Employee ID<input ng-model="search.employee_id"/>
+    Search where experience > or = <input ng-model="search_exp"/>
+ </fieldset>
+
+ <div ng-controller="FirstCtrl">
+ <fieldset>
+    <legend>Add Employee</legend>
+<%= render 'form' %>
+ </fieldset>
+<table align="center">
+  <thead>
+    <tr>
+      <th width="200">Employee Name</th>
+      <th width="150">Employee ID</th>
+      <th width="150">Experience</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr ng-repeat="list in lists| filter:search|orderBy:'name'|expfilter:search_exp">
+    <br/>
+
+    <td>{{list.employee_name}}</td>
+    <td>{{list.employee_id}}</td>
+    <td>{{list.experience}}yrs</td>
+  </tr>
+  </tbody>
+</table>
+
+
+</form>
+</div>
+</div>
+
+</body>
+<footer><div class="panel">Developed By Nikita Singh</div></footer>
+</html>
