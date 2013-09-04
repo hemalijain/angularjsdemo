@@ -74,6 +74,35 @@ $scope.addDetails=function()
         });
      
 	}; 
+
+
+  $scope.deleteDetails=function(id)
+  {
+            alert(id);
+        $http({
+            method : 'POST',
+
+            url : '/employee/delete?emp_id='+$id,
+          
+        }).success(function(data, status, headers, config) {
+
+        alert("employee added")
+
+            $http({
+                method : 'GET',
+                url : '/employee/display',dataType : 'script'
+            }).success(function(data, status, headers, config) {
+
+                $scope.lists = data;
+            }).error(function(data, status, headers, config) {
+                $scope.lists = "error" + data;
+            });
+        }).error(function(data, status, headers, config) {
+          alert("failure"+status) 
+          
+        });
+     
+  }; 
 }
 
 
