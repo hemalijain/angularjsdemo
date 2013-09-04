@@ -1,4 +1,4 @@
-<!doctype html>
+<li><a href="test.pdf">Some File</a> </li><!doctype html>
 <html ng-app="myApp">
 <header><div class="panel"><h3>Angularjs Demo</h3></div></header>
   <head>
@@ -6,7 +6,7 @@
 
   </head>
   <body>
-    <div id="content">
+
  <fieldset>
     <legend>Search Employee</legend>
 
@@ -37,6 +37,7 @@
     <td>{{list.employee_name}}</td>
     <td>{{list.employee_id}}</td>
     <td>{{list.experience}}yrs</td>
+    <td><button ng-click="deleteDetails(value)">Delete</button></td>
   </tr>
   </tbody>
 </table>
